@@ -2,8 +2,6 @@
 
 汉语普通话音节数据集 - 覆盖性广，使用频率高，涵盖所有普通话发音。
 
-Mandarin Chinese Syllable Dataset - Broad coverage with high usage frequency, encompassing all Mandarin phonemes.
-
 ---
 
 
