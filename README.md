@@ -1,4 +1,4 @@
-# Mandarin Chinese Syllable Dataset
+# 汉语普通话音节数据集
 
 汉语普通话音节数据集 - 覆盖性广，使用频率高，涵盖所有普通话发音。
 
