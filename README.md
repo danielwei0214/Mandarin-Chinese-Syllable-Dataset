@@ -160,8 +160,7 @@ This dataset is specifically designed for evaluating lip movements in Mandarin C
 2. **Text Generation and Speech Synthesis**: The syllables and words provided by the dataset can be used to train generative models, enabling high-quality text generation and speech synthesis. Accurate pinyin annotations ensure that the generated text and speech correspond precisely.
 
 3. **Linguistic Research**: The dataset can also be used in linguistic research, particularly in studies involving syllable coverage, word frequency statistics, and pinyin conversion. It provides a valuable reference for comprehensive coverage of Mandarin syllables.
-
----
+      ......
 
 ## File Description
 
@@ -174,7 +173,6 @@ This dataset is specifically designed for evaluating lip movements in Mandarin C
 | test.json | Complete sentences containing 1,713 syllables, with 100% syllable coverage (excluding rare characters, dialect pronunciations, and polyphonic characters). | Small |
 | test.txt | Contains the text content from the test.json file. | Small |
 
----
 
 ## Dataset Format Description
 
@@ -211,8 +209,6 @@ This dataset is specifically designed for evaluating lip movements in Mandarin C
 ]
 ```
 
----
-
 ## Dataset Advantages
 
 1. **Efficient Coverage and Resource Optimization**: Despite excluding rare characters, dialect pronunciations, and polyphonic characters, this dataset achieves comprehensive coverage of standard Mandarin syllables through efficient selection of commonly used words. This approach not only reduces the cost of dataset construction but also ensures efficient resource utilization during model training.
@@ -222,8 +218,6 @@ This dataset is specifically designed for evaluating lip movements in Mandarin C
 3. **Flexibility and Scalability**: The selection of words in the dataset is flexible, and with support from large language models for random text generation, it can be expanded or customized according to different needs, meeting various application scenarios, such as different speech recognition environments or lip movement recognition accuracy requirements.
 
 4. **Alignment of Pinyin and Text**: The provided pinyin is strictly aligned with the text, allowing for accurate pronunciation and lip movement learning in subsequent speech synthesis, text-to-speech (TTS), and automatic speech recognition (ASR) model training, thereby improving the quality of model output.
-
----
 
 ## Dataset Construction Process
 
@@ -278,4 +272,4 @@ Proper citation helps us increase the dataset’s impact and supports further re
 
 ## Acknowledgments
 
-We extend our sincere thanks to the contributors of the [Modern Chinese Dictionary (7th Edition) Database](https://github.com/CNMan/XDHYCD7th) for providing valuable data resources used in creating the "Mandarin Chinese Syllable Dataset." Your contributions have been instrumental in making this dataset a comprehensive resource for linguistic research and technological development.
+We extend our sincere thanks to the contributors of the [Modern Chinese Dictionary (7th Edition) Database](https://github.com/CNMan/XDHYCD7th) for providing valuable data resources used in creating the "Mandarin Chinese Syllable Dataset." 
