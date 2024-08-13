@@ -126,11 +126,11 @@ prompt = f"""
 
 ## 许可证和引用声明
 
-**许可证 | License**
+**许可证**
 
 本数据集使用 [CC BY-NC 4.0 许可证](https://creativecommons.org/licenses/by-nc/4.0/)进行分发。您可以自由使用和分享数据集，但需注明出处，并且仅限于非商业用途。
 
-**引用声明 | Citation Statement**
+**引用声明**
 
 如果您在研究或其他项目中使用了“汉语普通话音节数据集”，请注明数据集的来源，并使用以下引用格式：
 
@@ -139,3 +139,7 @@ prompt = f"""
 https://github.com/danielwei0214/Mandarin-Chinese-Syllable-Dataset
 ```
 通过适当的引用，您帮助我们提升数据集的影响力并支持进一步的研究与开发。  
+
+## 致谢
+
+在制作“汉语普通话音节数据集”的过程中，我们使用了 [《现代汉语词典》第七版数据库](https://github.com/CNMan/XDHYCD7th) 提供的数据资源。在此，我们对相关数据的贡献者表示衷心的感谢。  
