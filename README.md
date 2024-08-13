@@ -76,7 +76,7 @@
 
 ## 数据集构建流程
 
-
+![Mandarin Chinese Syllable Dataset Flowchart](https://github.com/danielwei0214/Mandarin-Chinese-Syllable-Dataset/blob/main/Mandarin%20Chinese%20Syllable%20Dataset%20Flowchart.png)
 
 ### 附：方案二流程
 1. 初始化音节集合：首先列出所有需要覆盖的音节，形成一个音节集合【汉语普通话音节（不含声调、音变）418个】。
