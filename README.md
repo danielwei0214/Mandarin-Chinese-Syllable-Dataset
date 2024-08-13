@@ -18,8 +18,6 @@
 
    ......
 
----
-
 ## 文件描述
 
 | 文件名 | 描述 | 大小 |
@@ -30,8 +28,6 @@
 | Modern Chinese Syllable Dictionary.json | 包含按音节类型分类的《现代汉语词典》第7版中所有词语，覆盖率最高。 | 大 |
 | test.json | 完整句子，包含1,713个音节，音节覆盖率达100%（排除生僻字、方言音和多音字）。 | 小 |
 | test.txt | 包含test.json文件中的文本内容。 | 小 |
-
----
 
 ## 数据集格式说明
 
@@ -68,7 +64,6 @@
   ...
 ]
 ```
----
 
 ## 数据集优势
 
@@ -79,8 +74,6 @@
 3. **灵活性与可扩展性**：由于数据集中的词语选择具有一定的灵活性，并且通过大语言模型支持随机生成文本内容，因此可以根据不同的需求扩展或定制化，满足多样化的应用场景，如不同的语音识别环境或唇形识别精度要求。
 
 4. **拼音与文本对齐**：提供的拼音与文本严格对齐，使得在后续的语音合成、文本转语音(TTS)以及语音识别(ASR)模型训练中能够准确地进行发音和唇形的学习，从而提升模型的输出质量。
-
----
 
 ## 数据集构建流程
 
@@ -101,7 +94,9 @@
 - 这个过程是迭代的，通过反复测试和评估模型输出，不断调整提示词以获取稳定的结果。
   
 ```json
-prompt = f"""你是一个中文语言学家和高级写作专家，擅长限制性中文写作，直到达到最高的中文语言水平。
+prompt = f"""
+
+ 你是一个中文语言学家和高级写作专家，擅长限制性中文写作，直到达到最高的中文语言水平。
  
  请你使用下面列表中的词语一步步进行思考写作，
  首先了解每个词语的语义，思考其出现的上下文语境；其次找到所有词语的显式或隐含联系（词性，主题，范围等）；最后参考示例，根据语义及联系，逐步思考将所有词语融合到一段话中；确保符合中文表达习惯，避免用词不当，没有语法错误，表达自然流畅。
@@ -124,7 +119,6 @@ prompt = f"""你是一个中文语言学家和高级写作专家，擅长限制�
 5. 对拼音进行标准化处理，例如将特殊的字符“ü”转换为“v”。
 6. 使用collections库中的counter统计总音节数量、覆盖的音节种类数量、音节覆盖率、未覆盖音节种类、各音节频率
 7. 输出结果：检验词语/段落文本的总音节数量、覆盖的音节种类数量、音节覆盖率、未覆盖音节种类、各音节频率
----
 
 ## 许可证和引用声明
 
@@ -145,3 +139,143 @@ https://github.com/danielwei0214/Mandarin-Chinese-Syllable-Dataset
 ## 致谢
 
 在制作“汉语普通话音节数据集”的过程中，我们使用了 [《现代汉语词典》第七版数据库](https://github.com/CNMan/XDHYCD7th) 提供的数据资源。在此，我们对相关数据的贡献者表示衷心的感谢。  
+
+---
+
+
+# Mandarin Chinese Syllable Dataset
+
+Mandarin Chinese Syllable Dataset - Extensive coverage, high frequency of use, and includes all Mandarin pronunciations.
+
+---
+
+## Dataset Introduction
+
+This dataset is specifically designed for evaluating lip movements in Mandarin Chinese pronunciation. It is applicable to scenarios such as lip movement training and optimization for digital humans and also includes a detailed syllable dictionary, providing an important resource for linguistic research. The dataset includes widely covered dictionaries like the "Modern Chinese Dictionary" and commonly used Mandarin word dictionaries. The test set covers all standard Mandarin syllables, excluding dialects, tones, tone sandhi, and rarely used characters. The dataset size is controlled between 1,000 to 2,000 characters to conserve resources.
+
+## Dataset Uses
+
+1. **Lip Movement Recognition and Training**: This dataset is primarily used for training and evaluating lip movement recognition systems for Mandarin, especially suited for lip sync training and optimization of digital humans. By covering all standard Mandarin syllables, the dataset effectively helps models learn and recognize all possible lip movement variations in Mandarin.
+
+2. **Text Generation and Speech Synthesis**: The syllables and words provided by the dataset can be used to train generative models, enabling high-quality text generation and speech synthesis. Accurate pinyin annotations ensure that the generated text and speech correspond precisely.
+
+3. **Linguistic Research**: The dataset can also be used in linguistic research, particularly in studies involving syllable coverage, word frequency statistics, and pinyin conversion. It provides a valuable reference for comprehensive coverage of Mandarin syllables.
+
+---
+
+## File Description
+
+| Filename | Description | Size |
+| -------- | ----------- | ---- |
+| Mandarin 206 Words (Covering All Syllables).txt | Contains 206 Mandarin words covering all syllables except for rare characters, dialect pronunciations, and polyphonic characters (e.g., 嗯, 咯, 谁, 这). | Small |
+| Mandarin Chinese syllables (excluding tones).txt | Lists all 418 syllables without tones. | Small |
+| Mandarin Syllable Dictionary.json | Includes a dictionary of Mandarin syllables categorized by syllable type, with high frequency of use. | Medium |
+| Modern Chinese Syllable Dictionary.json | Includes all words from the 7th edition of the "Modern Chinese Dictionary," categorized by syllable type, with the highest coverage. | Large |
+| test.json | Complete sentences containing 1,713 syllables, with 100% syllable coverage (excluding rare characters, dialect pronunciations, and polyphonic characters). | Small |
+| test.txt | Contains the text content from the test.json file. | Small |
+
+---
+
+## Dataset Format Description
+
+### test.json Format Description
+- Total number of syllables: 1713
+- Syllable coverage: 100.00%, excluding syllables with only one rare character, dialect pronunciations, and polyphonic characters (e.g., 嗯, 咯, 谁, 这).
+- Uncovered syllables (syllables with only one corresponding character):
+  - {'ň', 'cei', 'tei', 'ňg', 'chua', 'hng', 'lo', 'nun', 'zhei', 'nou', 'hm', 'ń', 'kei', 'den', 'rua', 'dia', 'ńg', 'eng', 'shei'}
+    - Rare characters (7): 鞥 (eng); 挼 (rua); 𤭢 (cei); 黁 (nun); 噷 (hm); 耨 (nou); 歘 (chua)
+    - Polyphonic characters (8): Alternate pronunciations of 'shei' (who - shui); 'lo' (咯 - ge); 'ň', 'ń', 'ňg', 'ńg', 'hng' (嗯); 'zhei' (这 - zhe)
+    - Dialect pronunciations (4): 嗲 (dia); 扽 (den); 剋 (kei); 忒 (tei)
+
+```json
+{
+  "words": ["迸发", "抖擞", "晒", "不胫而走", "辩护人", "金龟子"],  # Words containing the syllables
+  "text": "辩护人在法庭上激情迸发，为客户抖擞精神；案件详情不胫而走，社会各界关注。外面的金龟子在阳光下晒得慵懒。",  # Text generated by a large model based on the words
+  "pinyin": "bian hu ren zai fa ting shang ji qing beng fa ， wei ke hu dou sou jing shen ； an jian xiang qing bu jing er zou ， she hui ge jie guan zhu 。 wai mian de jin gui zi zai yang guang xia shai de yong lan 。"  # Pinyin corresponding to the text (without tones)
+}
+```
+
+### Modern Chinese Syllable Dictionary.json/Mandarin Syllable Dictionary.json Format Description
+- **Modern Chinese Syllable Dictionary.json**: Includes all words from the 7th edition of the "Modern Chinese Dictionary," categorized by syllable type, with the highest coverage, over 70,000 entries.
+- **Mandarin Syllable Dictionary.json**: Includes the most commonly used words in Mandarin, categorized by syllable type, with the highest frequency of use, over 16,000 entries.
+
+```json
+[
+  {
+    "id": "0001",      # Syllable sequence number
+    "syllable": "a",   # Syllable details
+    "words": ["阿", "阿姨"],  # Words containing this syllable
+    "pinyin": ["a", "a yi"]  # Pinyin corresponding to the words
+  },
+  ...
+]
+```
+
+---
+
+## Dataset Advantages
+
+1. **Efficient Coverage and Resource Optimization**: Despite excluding rare characters, dialect pronunciations, and polyphonic characters, this dataset achieves comprehensive coverage of standard Mandarin syllables through efficient selection of commonly used words. This approach not only reduces the cost of dataset construction but also ensures efficient resource utilization during model training.
+
+2. **Practical Application**: The dataset is constructed based on the most commonly used Mandarin words, covering the most frequent syllable types. This means it performs better in practical applications, more accurately reflecting the usage of Mandarin. For models that require efficient training and rapid deployment, this dataset can significantly enhance performance.
+
+3. **Flexibility and Scalability**: The selection of words in the dataset is flexible, and with support from large language models for random text generation, it can be expanded or customized according to different needs, meeting various application scenarios, such as different speech recognition environments or lip movement recognition accuracy requirements.
+
+4. **Alignment of Pinyin and Text**: The provided pinyin is strictly aligned with the text, allowing for accurate pronunciation and lip movement learning in subsequent speech synthesis, text-to-speech (TTS), and automatic speech recognition (ASR) model training, thereby improving the quality of model output.
+
+---
+
+## Dataset Construction Process
+
+![Mandarin Chinese Syllable Dataset Flowchart](https://github.com/danielwei0214/Mandarin-Chinese-Syllable-Dataset/blob/main/Mandarin%20Chinese%20Syllable%20Dataset%20Flowchart.png)
+
+### Appendix: Alternative Process Flow
+1. Initialize the Syllable Set: First, list all the syllables that need to be covered, forming a syllable set [Mandarin Chinese syllables (excluding tones) 418 syllables].
+2. Select Words that Cover the Most Syllables: In each step, find the word that covers the most “uncovered syllables.” “Uncovered syllables” refer to syllables that have not been covered by any selected word.
+3. Update the Syllable Set: Once a word is selected, remove the syllables covered by that word from the “uncovered syllables” set.
+4. Repeat the Selection Process: Continue this process, selecting a word that covers the most syllables from the remaining “uncovered syllables” set each time until all syllables are covered or no more words can add to the coverage.
+
+This method ensures that all different syllables are covered with the fewest words, and each selection is based on maximizing coverage efficiency for the remaining uncovered syllables.
+
+### Appendix: Large Model Data Generation Prompt
+- Create prompts using the template “Role + Task (Details) + Goal + Format/Content Requirements + Example.” ‘Role’ defines the LLM’s role, ‘Task’ describes the specific task background and details, ‘Goal’ specifies the model’s expected output, and Format/Content Requirements define the specific format of the output.
+- Chain-of-Thought (CoT) technology enables LLMs to process complex tasks by simulating human problem-solving thinking, improving efficiency and accuracy in problem-solving.
+- Few-shot learning technology allows these models to quickly learn and adapt to new tasks by analyzing limited examples.
+- This process is iterative, with repeated testing and evaluation of model outputs, constantly adjusting the prompt to achieve stable results.
+
+```json
+prompt = f"""
+
+ 你是一个中文语言学家和高级写作专家，擅长限制性中文写作，直到达到最高的中文语言水平。
+ 
+ 请你使用下面列表中的词语一步步进行思考写作，
+ 首先了解每个词语的语义，思考其出现的上下文语境；其次找到所有词语的显式或隐含联系（词性，主题，范围等）；最后参考示例，根据语义及联系，逐步思考将所有词语融合到一段话中；确保符合中文表达习惯，避免用词不当，没有语法错误，表达自然流畅。
+ 要求必须包含列表中的所有词语，每个词语仅使用一次，不要重复使用，长度要求50个汉字字符左右。
+ 示例：{{"words":["山村", "万籁俱寂", "咯吱", "簌簌","枯枝","偶尔","冬天","落"],"text":"冬天的山村，到了夜里就万籁俱寂，只听得雪花簌簌地不断往下落，树木的枯枝被雪压断了，偶尔咯吱一声响。"}}
+ 
+ 词语：```{selected_words}
+ 
+ 注意：只能输出json格式内容，包含words和text键值，不能输出其他无关内容。"""
+```
+
+## License and Citation
+
+**License**
+
+This dataset is distributed under the [CC BY-NC 4.0 License](https://creativecommons.org/licenses/by-nc/4.0/). You are free to use and share the dataset, provided that you give appropriate credit and use it only for non-commercial purposes.
+
+**Citation**
+
+If you use the “Mandarin Chinese Syllable Dataset” in your research or projects, please acknowledge the source using the following citation format:
+
+```markdown
+Mandarin Chinese Syllable Dataset:  
+https://github.com/danielwei0214/Mandarin-Chinese-Syllable-Dataset
+```
+
+Proper citation helps us increase the dataset’s impact and supports further research and development.
+
+
+## Acknowledgments
+
+We extend our sincere thanks to the contributors of the [Modern Chinese Dictionary (7th Edition) Database](https://github.com/CNMan/XDHYCD7th) for providing valuable data resources used in creating the "Mandarin Chinese Syllable Dataset." Your contributions have been instrumental in making this dataset a comprehensive resource for linguistic research and technological development.
